@@ -6,7 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Rubik", sans-serif;
 }
 
 html,
@@ -92,23 +92,21 @@ nav ul li a:hover {
     height: 200%;
     background: radial-gradient(circle, rgba(77, 208, 225, 0.1), transparent 70%) no-repeat;
     animation: moveBg 10s linear infinite;
+    pointer-events: none;   /* ✅ allow clicks to pass through */
+    z-index: 0;             /* push behind content */
 }
+
+.hero-content {
+    position: relative;
+    z-index: 1; /* ✅ bring content above the pseudo background */
+}
+
 
 @keyframes moveBg {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    50% {
-        transform: translate(50px, 50px);
-    }
-
-    100% {
-        transform: translate(0, 0);
-    }
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(50px, 50px); }
+    100% { transform: translate(0, 0); }
 }
-
-
 
 .hero-content {
     display: flex;
@@ -128,19 +126,10 @@ nav ul li a:hover {
 }
 
 @keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
 }
-
 
 .profile-pic img {
     width: 100%;
@@ -148,18 +137,20 @@ nav ul li a:hover {
     object-fit: cover;
 }
 
-.hero-content h1 {
+.hero-content h2 {
     font-size: 3rem;
     margin-top: 15px;
     font-weight: bold;
 }
 
 .hero-content p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: #555;
 }
 
-/* Buttons */
+/* =========================
+   Buttons
+========================= */
 .btn {
     background: linear-gradient(90deg, #4dd0e1, #26c6da);
     color: white;
@@ -171,13 +162,19 @@ nav ul li a:hover {
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
-    margin: 3px auto;
+    margin: 20px auto;
     box-shadow: 0 4px 10px rgba(38, 198, 218, 0.4);
     transition: all 0.3s ease;
 }
 
+.btn:hover {
+    background: linear-gradient(90deg, #26c6da, #00acc1);
+    box-shadow: 0 6px 15px rgba(0, 172, 193, 0.5);
+    transform: translateY(-2px);
+}
+
 #btn_2 {
-    background: linear-gradient(white);
+    background: white; /* ✅ fixed */
     color: black;
     font-size: 1rem;
     font-weight: bold;
@@ -198,13 +195,6 @@ nav ul li a:hover {
     border: 2px solid rgb(161, 161, 161);
 }
 
-.btn:hover {
-    background: linear-gradient(90deg, #26c6da, #00acc1);
-    box-shadow: 0 6px 15px rgba(0, 172, 193, 0.5);
-    transform: translateY(-2px);
-}
-
-
 /* =========================
    Sections
 ========================= */
@@ -213,15 +203,17 @@ nav ul li a:hover {
     text-align: center;
 }
 
-.section h2 {
+.section h1 {
     margin-bottom: 20px;
-    margin-top: 20px;
-    color: #203a43;
+    padding-bottom: 30px;
+    font-size: 3rem;
+    color: black;
+    font-weight: bolder;
 }
 
 .section p,
 .section ul {
-    color: #555;
+    color: black;
 }
 
 /* =========================
@@ -239,8 +231,8 @@ nav ul li a:hover {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 300px;
-    height: 300px;
+    width: 600px;
+    height: 500px;
     transition: transform 0.3s;
 }
 
@@ -250,11 +242,13 @@ nav ul li a:hover {
 
 .project-card p {
     margin: 2px;
+    font-size: 1.3rem;
+    color: #555;
 }
 
 .project-card .project-img {
     width: 100%;
-    height: auto;
+    height: 60%;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     margin-top: 10px;
@@ -274,6 +268,10 @@ nav ul li a:hover {
     color: #4dd0e1;
 }
 
+#links{
+    background-color: #F9FAFB;
+}
+
 /* =========================
    Footer
 ========================= */
@@ -290,11 +288,14 @@ footer {
 .education {
     padding: 50px 20px;
     text-align: center;
+    background: #F9FAFB;
 }
 
 .education h2 {
-    margin-bottom: 30px;
-    color: #333;
+    font-size: 3rem;
+    color: black;
+    font-weight: bolder;
+    padding-bottom: 30px;
 }
 
 .education-cards {
@@ -318,10 +319,6 @@ footer {
     box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.12);
 }
 
-.edu-card>h3::first-child {
-    margin-bottom: 10px;
-}
-
 .edu-card p {
     color: #555;
 }
@@ -330,8 +327,8 @@ footer {
    About Section
 ========================= */
 .about-card {
-    background: #ffffff;
-    border-radius: 15px;
+    background: F9FAFB;
+    border-radius: 20px;
     box-shadow: 0px 4px 15px rgba(0.5, 0.5, 0.5, 0.08);
     padding: 20px;
     max-width: 900px;
@@ -339,225 +336,210 @@ footer {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+
+
 .about-card:hover {
     transform: translateY(-5px);
     box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.12);
 }
 
-#about h2 {
-    font-size: 3rem;
-    color: black;
-    font-weight: bolder;
+.about-card p {
+    color: #555;
+    line-height: 1.7;
+    font-size: 1.3rem;
+}
 
-    .about-card p {
-        color: #555;
-        line-height: 1.7;
-    }
 
-    .about-card>p:first-child {
-        font-size: 1.3rem;
-        color: black;
-    }
-
-    /* =========================
+/* =========================
    Contact Form
 ========================= */
-    .contact-card {
-        background: #ffffff;
-        border-radius: 10px;
-        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
-        padding: 30px;
-        max-width: 500px;
-        margin: 0 auto;
-        text-align: left;
-    }
 
-    .contact-card form {
-        display: flex;
-        flex-direction: column;
-    }
+#contact {
+    background: #F9FAFB;   /* ✅ light background */
+    padding: 50px 20px;
+}
 
-    .contact-card label {
-        margin-top: 15px;
-        margin-bottom: 5px;
-        color: #203a43;
-        font-weight: bold;
-    }
+.contact-card {
+    background: #Ffffff;
+    border-radius: 20px;
+    border: 2px solid rgb(223, 223, 223);
+    box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
 
-    .contact-card input,
-    .contact-card textarea {
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 6px;
-        outline: none;
-        transition: border-color 0.3s ease;
-    }
+.contact-card form {
+    display: flex;
+    flex-direction: column;
+}
 
-    .contact-card input:focus,
-    .contact-card textarea:focus {
-        border-color: #4dd0e1;
-    }
+.contact-card label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 1.2rem;
+    
+}
 
-    .contact-card textarea {
-        resize: vertical;
-        font-family: Arial, Helvetica, sans-serif;
-    }
+.contact-card input,
+.contact-card textarea {
+    padding: 10px;
+    border: 2px solid rgb(223, 223, 223);
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
 
-    .contact-card .btn {
-        background: linear-gradient(90deg, #4dd0e1, #26c6da);
-        color: white;
-        font-size: 1rem;
-        font-weight: bold;
-        padding: 10px 22px;
-        border: none;
-        border-radius: 25px;
-        cursor: pointer;
-        display: block;
-        margin: 20px auto 0;
-        box-shadow: 0 4px 10px rgba(38, 198, 218, 0.4);
-        transition: all 0.3s ease;
-    }
+.contact-card input:focus,
+.contact-card textarea:focus {
+    border-color: #4dd0e1;
+}
 
-    .contact-card .btn:hover {
-        background: linear-gradient(90deg, #26c6da, #00acc1);
-        box-shadow: 0 6px 15px rgba(0, 172, 193, 0.5);
-        transform: translateY(-2px);
-    }
+.contact-card textarea {
+    resize: vertical;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-    /* =========================
-   Resume Page
+.contact-card .btn {
+    background: linear-gradient(90deg, #4dd0e1, #26c6da);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto 0;
+    box-shadow: 0 4px 10px rgba(38, 198, 218, 0.4);
+    transition: all 0.3s ease;
+}
+
+.contact-card .btn:hover {
+    background: linear-gradient(90deg, #26c6da, #00acc1);
+    box-shadow: 0 6px 15px rgba(0, 172, 193, 0.5);
+    transform: translateY(-2px);
+}
+
+/* =========================
+   Resume Card
 ========================= */
-    .resume-card {
-        background: #ffffff;
-        border-radius: 10px;
-        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
-        padding: 30px;
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: left;
-        line-height: 1.6;
-    }
+.resume-card {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    line-height: 1.6;
+}
 
-    .resume-card h3 {
-        font-size: 1.8rem;
-        color: #203a43;
-    }
+.resume-card h3 {
+    font-size: 1.8rem;
+    color: #203a43;
+}
 
-    .resume-card h4 {
-        margin-top: 20px;
-        color: #026e7f;
-    }
+.resume-card h4 {
+    margin-top: 20px;
+    color: #026e7f;
+}
 
-    .resume-card ul {
-        list-style: disc inside;
-        padding-left: 0;
-    }
+.resume-card ul {
+    list-style: disc inside;
+    padding-left: 0;
+}
 
-    .print-btn {
-        margin-top: 20px;
-        display: block;
-        width: auto;
-        padding: 8px 16px;
-    }
+.print-btn {
+    margin-top: 20px;
+    display: block;
+    width: auto;
+    padding: 8px 16px;
+}
 
-    /* =========================
+/* =========================
    Print Styling
 ========================= */
-    @media print {
-
-        nav,
-        footer,
-        .print-btn {
-            display: none !important;
-        }
-
-        body {
-            background: white;
-        }
-
-        .resume-card {
-            box-shadow: none;
-            padding: 0;
-        }
+@media print {
+    nav, footer, .print-btn {
+        display: none !important;
     }
+    body {
+        background: white;
+    }
+    .resume-card {
+        box-shadow: none;
+        padding: 0;
+    }
+}
 
-    /* =========================
+/* =========================
    Responsive
 ========================= */
-    @media (max-width: 712px) {
-        nav ul {
-            display: none;
-            flex-direction: column;
-            background: linear-gradient(180deg, #0f2027, #203a43, #2c5364);
-            position: absolute;
-            top: 55px;
-            right: 0;
-            width: 220px;
-            border-radius: 0 0 8px 8px;
-            padding: 10px 0;
-        }
-
-        nav ul.active {
-            display: flex;
-        }
-
-        nav ul li {
-            margin: 10px 0;
-            text-align: center;
-        }
-
-        .menu-toggle {
-            display: block;
-        }
-
-        .projects-container {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-        }
-
-        .hero-content h2 {
-            font-size: 2rem;
-        }
-
-        .hero-content p {
-            font-size: 1rem;
-        }
-
-        .profile-pic {
-            width: 120px;
-            height: 120px;
-        }
-
-        .hero-content h2 {
-            font-size: 1.6rem;
-        }
-
-        .hero-content p {
-            font-size: 0.9rem;
-        }
-
-
+@media (max-width: 712px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: linear-gradient(180deg, #0f2027, #203a43, #2c5364);
+        position: absolute;
+        top: 55px;
+        right: 0;
+        width: 220px;
+        border-radius: 0 0 8px 8px;
+        padding: 10px 0;
     }
 
+    nav ul.active {
+        display: flex;
+    }
 
-    /* =========================
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    .hero-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .project-card {
+        height: 400px;
+        width: 400px;
+    }
+}
+
+/* =========================
    Scrollbar Styling
 ========================= */
-    html::-webkit-scrollbar {
-        width: 6px;
-    }
+html::-webkit-scrollbar {
+    width: 6px;
+}
 
-    html::-webkit-scrollbar-thumb {
-        background: transparent;
-        transition: background 0.3s ease;
-    }
+html::-webkit-scrollbar-thumb {
+    background: transparent;
+    transition: background 0.3s ease;
+}
 
-    html:hover::-webkit-scrollbar-thumb {
-        background: rgba(0, 0, 0, 0.3);
-    }
+html:hover::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
 }
