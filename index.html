@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaibhav's Portfolio</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <h1><a href="#home">Vaibhav Kumar</a></h1>
+    <span class="menu-toggle">&#9776;</span>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-image"></div>
+      <div class="hero-content">
+        <h3>Hello, I'm <span>Vaibhav</span></h3>
+        <p>Aspiring Web Developer & Designer</p>
+        <a href="#projects" class="btn">View My Work</a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <div class="about-card">
+        <p>My name is Vaibhav Sharma and I help brands grow.</p>
+        <p>I am a passionate web developer who loves creating modern and responsive websites. 
+        I enjoy working with HTML, CSS, JavaScript, and frameworks like Flask and Bootstrap. 
+        My goal is to build user-friendly, visually appealing, and functional web experiences.</p>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education" id="education">
+      <h2>Education</h2>
+      <div class="education-cards">
+        <div class="edu-card">
+          <h3>Bachelor of Science (B.Sc)</h3>
+          <h4>(Computer Science)</h4>
+          <p>Sri Dev Suman University, Tehri, Uttrakhand, 2022 - 2025</p>
+        </div>
+        <div class="edu-card">
+          <h3>High School</h3>
+          <p>Vasudev Lal Maithi SVM Inter College, Brahmpur, Roorkee, 2019 - 2020</p>
+        </div>
+        <div class="edu-card">
+          <h3>Certifications</h3>
+          <p>Flask Essential Training - LinkedIn Learning</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="projects-container">
+        <div class="project-card">
+          <h3>Weather Dashboard</h3>
+          <p>Built a weather dashboard that shows current weather data using a live API.</p>
+          <img src="assets/images/project1-screenshot.png" alt="Weather Dashboard" class="project-img">
+        </div>
+        <div class="project-card">
+          <h3>CLI Calculator</h3>
+          <p>A simple Command-Line Interface (CLI) calculator built using Python.</p>
+          <img src="assets/images/project2-screenshot.png" alt="CLI Calculator" class="project-img">
+        </div>
+        <div class="project-card">
+          <h3>Todo App</h3>
+          <p>A beginner-friendly Command Line ToDo App in Python. Allows users to manage tasks and file saving.</p>
+          <img src="assets/images/project3-screenshot.png" alt="Todo App" class="project-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <h2>Contact Me</h2>
+      <div class="contact-card">
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="_replyto" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Links Section -->
+    <section id="links" class="section">
+      <div class="social-links">
+        <a href="https://github.com/Vaibhavk9675" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="http://www.linkedin.com/in/vaibhavk9675" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:vaibhav9756.kr@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Vaibhav Sharma | All Rights Reserved</p>
+  </footer>
+
+  <!-- Script for menu toggle -->
+  <script>
+    const toggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector("nav ul");
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>
