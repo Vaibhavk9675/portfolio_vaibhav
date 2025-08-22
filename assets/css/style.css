@@ -1015,7 +1015,7 @@ footer {
     }
 
     .project-img {
-        width: 300px;
+        width: auto;
         height: 300px;
         border-radius: 8px;
         margin-bottom: 25px;
