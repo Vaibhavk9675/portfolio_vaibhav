@@ -230,7 +230,7 @@ nav ul li a:hover {
     height: 200px;
     border-radius: 50%;
     overflow: hidden;
-    border: 5px solid #ccc;
+    border: 5px solid white;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     animation: float 4s ease-in-out infinite;
 }
@@ -268,9 +268,8 @@ nav ul li a:hover {
 .hero-content p {
     font-family: monospace;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 2.5rem;
     border-right: 3px solid #2575fc;
-    /* blinking cursor */
     white-space: nowrap;
     display: inline-block;
     overflow: hidden;
@@ -292,14 +291,6 @@ nav ul li a:hover {
         border-color: transparent;
     }
 }
-
-.hero-content p .typing {
-    animation: blink 1s infinite;
-}
-
-
-
-
 
 /* =========================
    Buttons
@@ -404,10 +395,8 @@ nav ul li a:hover {
 .project-img {
     width: 100%;
     height: 250px;
-    /* ✅ consistent image height */
     border-radius: 8px;
     margin-bottom: 25px;
-    /* ✅ space between image & description */
     object-fit: cover;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
