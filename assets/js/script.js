@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // typing-effect
 
-const words = ["Aspiring Web Developer"];
+const words = ["Aspiring Python Developer"];
 let i = 0; // current word
 let j = 0; // current letter
 let isDeleting = false;
