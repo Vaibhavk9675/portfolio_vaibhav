@@ -1017,10 +1017,8 @@ footer {
     .project-img {
         width: auto;
         height: auto;
-
         border-radius: 8px;
         margin-bottom: 25px;
-        /* ✅ space between image & description */
         object-fit: cover;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
