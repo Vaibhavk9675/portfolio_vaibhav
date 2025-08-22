@@ -1,14 +1,41 @@
 // =======================
 // Navbar Toggle
 // =======================
-const toggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector("nav ul");
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+const links = document.querySelectorAll('.nav-links a');
+const overlay = document.createElement('div');
+overlay.classList.add('overlay');
+document.body.appendChild(overlay);
 
-if (toggle) {
-  toggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  overlay.classList.toggle('show');
+
+  // Swap ☰ and ✖
+  if (menuToggle.textContent === "☰") {
+    menuToggle.textContent = "✖";
+  } else {
+    menuToggle.textContent = "☰";
+  }
+});
+
+// Close nav on link click
+links.forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    overlay.classList.remove('show');
+    menuToggle.textContent = "☰"; // reset hamburger
   });
-}
+});
+
+// Close nav on overlay click
+overlay.addEventListener('click', () => {
+  navLinks.classList.remove('active');
+  overlay.classList.remove('show');
+  menuToggle.textContent = "☰"; // reset hamburger
+});
+
 
 // =======================
 // Contact Form Submission
@@ -114,5 +141,21 @@ function type() {
 // Start the typing animation
 type();
 
+// back to top button
+
+const backToTop = document.getElementById("backToTop");
+
+// Show button when scrolling down 100px
+window.addEventListener("scroll", () => {
+  backToTop.style.display = window.scrollY > 100 ? "block" : "none";
+});
+
+// Smooth scroll to top on click
+backToTop.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
 
 
