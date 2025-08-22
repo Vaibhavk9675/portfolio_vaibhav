@@ -78,3 +78,41 @@ document.addEventListener("DOMContentLoaded", () => {
     circle.style.setProperty("--progress", percent + "%");
   });
 });
+
+
+// typing-effect
+
+const words = ["Aspiring Web Developer"];
+let i = 0; // current word
+let j = 0; // current letter
+let isDeleting = false;
+const typingElement = document.querySelector('.hero-content p');
+
+function type() {
+  const currentWord = words[i];
+  typingElement.textContent = currentWord.substring(0, j);
+
+  // Smooth speed: random variation for natural feel
+  let speed = isDeleting ? 40 + Math.random() * 30 : 120 + Math.random() * 50;
+
+  if (!isDeleting && j === currentWord.length + 1) {
+    // Pause before deleting
+    isDeleting = true;
+    setTimeout(type, 800);
+  } else if (isDeleting && j === 0) {
+    // Pause before typing next word
+    isDeleting = false;
+    i = (i + 1) % words.length;
+    setTimeout(type, 500);
+  } else {
+    // Move one letter forward/backward
+    j = isDeleting ? j - 1 : j + 1;
+    setTimeout(type, speed);
+  }
+}
+
+// Start the typing animation
+type();
+
+
+

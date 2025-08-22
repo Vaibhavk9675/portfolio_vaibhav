@@ -23,7 +23,7 @@ main {
    Navbar
 ========================= */
 nav {
-    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+    background: white;
     padding: 12px 20px;
     display: flex;
     justify-content: space-between;
@@ -33,12 +33,16 @@ nav {
     top: 0;
     height: 68px;
     z-index: 9999;
-    box-shadow: 0 5px 9px rgba(0, 0, 0, 0.20);
+    border-bottom: 1.5px solid rgb(173, 173, 173);
+    /* box-shadow: 0 5px 9px rgba(0, 0, 0, 0.20); */
 }
 
 nav h1 a {
-    color: #e0f7fa;
+    background: linear-gradient(45deg, #2575fc, #4dd0e1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-decoration: none;
+    font-size: 2rem;
 }
 
 nav ul {
@@ -47,17 +51,61 @@ nav ul {
     gap: 20px;
 }
 
-nav ul li a {
-    color: #e0f7fa;
+.nav-links a {
+    color: black;
     text-decoration: none;
     padding: 8px 12px;
     border-radius: 4px;
-    transition: background 0.3s;
+    transition: background 0.5s;
+    font-size: 16px;
+    font-weight: 400px
 }
 
 nav ul li a:hover {
-    background: rgba(224, 247, 250, 0.15);
+    background: linear-gradient(45deg, #2575fc, #4dd0e1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    /* space between links */
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
+    position: relative;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background 0.5s;
+    font-size: 18px;
+    font-weight: 400px
+}
+
+/* Create the underline using pseudo-element */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    /* start with 0 width */
+    height: 2px;
+    /* thickness of underline */
+    background: #2575fc;
+    /* underline color */
+    transition: width 0.5s ease;
+}
+
+/* On hover, expand the underline */
+.nav-links a:hover::after {
+    width: 100%;
+}
+
 
 .menu-toggle {
     display: none;
@@ -195,10 +243,33 @@ nav ul li a:hover {
     font-weight: bold;
 }
 
-.hero-content p {
+/* .hero-content p {
     font-size: 1.3rem;
     color: #555;
+} */
+
+.hero-content p {
+  font-family: monospace;
+  font-size: 2rem;
+  border-right: 3px solid #2575fc; /* blinking cursor */
+  white-space: nowrap;
+  display: inline-block;        /* allows width control */
+  /* min-width: 15ch;  */
+  overflow: hidden;
 }
+
+@keyframes blink {
+  0%, 50%, 100% { border-color: #2575fc; }
+  25%, 75% { border-color: transparent; }
+}
+
+.hero-content p .typing {
+  animation: blink 1s infinite;
+}
+
+
+
+
 
 /* =========================
    Buttons
@@ -582,16 +653,20 @@ nav ul li a:hover {
     font-size: 1.2rem;
 }
 
-.about-card h2{
+.about-card h2 {
     margin: 10px;
     font-size: 2em;
 }
 
 .card2-container {
-  display: flex;       /* Enables side-by-side layout */
-  gap: 10px;           /* Space between cards */
-  justify-content: center; /* Center cards horizontally */
-  flex-wrap: wrap;     /* Wrap to next line on small screens */
+    display: flex;
+    /* Enables side-by-side layout */
+    gap: 10px;
+    /* Space between cards */
+    justify-content: center;
+    /* Center cards horizontally */
+    flex-wrap: wrap;
+    /* Wrap to next line on small screens */
 }
 
 .about-card2 {
@@ -618,11 +693,13 @@ nav ul li a:hover {
 }
 
 .gradient-icon {
-  font-size: 50px; /* adjust size */
-  margin: 20px;
-  background: linear-gradient(45deg, #2575fc,#4dd0e1); /* gradient colors */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    font-size: 50px;
+    /* adjust size */
+    margin: 20px;
+    background: linear-gradient(45deg, #2575fc, #4dd0e1);
+    /* gradient colors */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 
