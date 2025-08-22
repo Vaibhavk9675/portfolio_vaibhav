@@ -120,7 +120,7 @@ nav ul li a:hover {
     height: 200px;
     border-radius: 50%;
     overflow: hidden;
-    border: 5px solid #4dd0e1;
+    border: 5px solid rgb(204, 203, 203);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     animation: float 4s ease-in-out infinite;
 }
@@ -205,11 +205,26 @@ nav ul li a:hover {
 
 .section h1 {
     margin-bottom: 20px;
-    padding-bottom: 30px;
+    padding-bottom: 15px; /* space above underline */
     font-size: 3rem;
     color: black;
     font-weight: bolder;
+    position: relative;
+    display: inline-block;
 }
+
+.section h1::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;  /* underline length */
+    height: 4px;  /* underline thickness */
+    background: linear-gradient(90deg, #4dd0e1, #0288d1);
+    border-radius: 2px;
+}
+
 
 .section p,
 .section ul {
