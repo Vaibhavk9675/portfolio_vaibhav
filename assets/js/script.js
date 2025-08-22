@@ -60,3 +60,21 @@ if (form) {
     }
   });
 }
+
+// skill Section 
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Animate linear progress bars
+  document.querySelectorAll(".skill-progress").forEach((bar) => {
+    const width = bar.getAttribute("data-width");
+    setTimeout(() => {
+      bar.style.width = width + "%";
+    }, 200);
+  });
+
+  // Animate circular progress
+  document.querySelectorAll(".circular-progress").forEach((circle) => {
+    const percent = circle.getAttribute("data-percentage");
+    circle.style.setProperty("--progress", percent + "%");
+  });
+});

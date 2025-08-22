@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blurred Background Example</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff;
+    }
+
+    .hero-section {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    /* Profile Image */
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid white;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+      z-index: 1;
+    }
+
+    .hero-section h1 {
+      margin-top: 20px;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #222;
+      z-index: 1;
+    }
+
+    /* Background Blobs */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px); /* Reduced blur for visibility */
+      opacity: 0.9;       /* Increased opacity */
+      z-index: 0;
+    }
+
+    .blob1 {
+      top: -150px;
+      left: -150px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle at center, #6ec1e4, transparent 50%);
+    }
+
+    .blob2 {
+      bottom: -150px;
+      right: -150px;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle at center, #f89bba, transparent 50%);
+    }
+
+    .blob3 {
+      top: 50%;
+      left: -200px;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle at center, #9993ee, transparent 50%);
+    }
+
+    .blob4 {
+      bottom: 20%;
+      right: -200px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle at center, #55efc4, transparent 50%);
+    }
+
+    /* New Top Center Blob */
+    .blob5 {
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle at center, #7fd5f7, transparent 50%);
+    }
+  </style>
+</head>
+<body>
+  <section class="hero-section">
+    <!-- Blobs -->
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+    <div class="blob blob4"></div>
+    <div class="blob blob5"></div>
+
+    <!-- Profile -->
+    <img src="your-profile.jpg" alt="Profile" class="profile-img">
+    <h1>Muskan Thakur</h1>
+  </section>
+</body>
+</html>
