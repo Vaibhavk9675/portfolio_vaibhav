@@ -899,7 +899,7 @@ footer {
 /* =========================
    Responsive
 ========================= */
-@media (max-width: 768px) {
+@media (max-width: 720px) {
     .menu-toggle {
         display: block;
     }
@@ -1016,13 +1016,14 @@ footer {
 
     .project-img {
         width: auto;
-        height: auto;
-
+        height: 300px;
         border-radius: 8px;
         margin-bottom: 25px;
-        /* ✅ space between image & description */
         object-fit: cover;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    .project-card {
+       height: 500px
     }
 
 }
