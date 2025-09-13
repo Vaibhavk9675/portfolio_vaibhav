@@ -330,6 +330,7 @@ nav ul li a:hover {
 /* =========================
    Section Titles
 ========================= */
+
 .section {
     padding: 50px 20px;
     text-align: center;
@@ -424,9 +425,11 @@ nav ul li a:hover {
     color: #4dd0e1;
 }
 
+
 /* =========================
    Skills Section
 ========================= */
+
 #skills {
     background: #F9FAFB;
     padding: 60px 20px;
